@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* ── Light mode (default) ── */
+    --background:          210 40% 98%;    /* slate-50   #f8fafc */
+    --foreground:          222 47% 11%;    /* slate-900  #0f172a */
+    --card:                0 0% 100%;      /* white */
+    --card-foreground:     215 25% 27%;    /* slate-700  #334155 */
+    --popover:             0 0% 100%;
+    --popover-foreground:  222 47% 11%;
+    --primary:             243 55% 41%;    /* indigo-700 #3730a3 */
+    --primary-foreground:  0 0% 100%;
+    --secondary:           210 40% 96%;    /* slate-100  #f1f5f9 */
+    --secondary-foreground:215 25% 27%;
+    --muted:               210 40% 96%;
+    --muted-foreground:    215 16% 47%;    /* slate-500  #64748b */
+    --accent:              38 92% 50%;     /* amber-500  #f59e0b */
+    --accent-foreground:   0 0% 100%;
+    --destructive:         0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+    --border:              214 32% 91%;    /* slate-200  #e2e8f0 */
+    --input:               214 32% 91%;
+    --ring:                245 75% 59%;    /* indigo-600 #4f46e5 */
+    --radius:              0.875rem;       /* 14px */
+  }
+
+  .dark {
+    /* ── Dark mode ── */
+    --background:          243 47% 8%;     /* #0c0b1d */
+    --foreground:          220 20% 95%;
+    --card:                243 38% 12%;    /* #14122a */
+    --card-foreground:     220 20% 90%;
+    --popover:             243 38% 12%;
+    --popover-foreground:  220 20% 90%;
+    --primary:             234 89% 74%;    /* indigo-400 #818cf8 */
+    --primary-foreground:  243 47% 8%;
+    --secondary:           243 30% 18%;
+    --secondary-foreground:220 20% 90%;
+    --muted:               243 30% 16%;
+    --muted-foreground:    220 15% 60%;
+    --accent:              43 96% 56%;     /* amber-400  #fbbf24 */
+    --accent-foreground:   243 47% 8%;
+    --destructive:         0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 100%;
+    --border:              243 30% 20%;
+    --input:               243 30% 18%;
+    --ring:                234 89% 74%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer utilities {
+  /* Consistent section padding */
+  .section-pad {
+    @apply py-20 md:py-28;
+  }
+  /* Consistent max-width container */
+  .container-page {
+    @apply xl:w-4/5 2xl:w-[68%] mx-auto px-6 md:px-8;
+  }
+  /* Alternating section background */
+  .section-alt {
+    @apply bg-slate-50;
+  }
+  /* Indigo tinted band */
+  .section-brand {
+    @apply bg-brand-950 text-white;
+  }
+}
+
+/* ── Subtle gradient for hero background ── */
+.hero-gradient {
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(55, 48, 163, 0.08) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 30% at 80% 20%, rgba(79, 70, 229, 0.05) 0%, transparent 50%),
+    hsl(var(--background));
+}
+
+.dark .hero-gradient {
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(129, 140, 248, 0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 30% at 80% 20%, rgba(99, 102, 241, 0.08) 0%, transparent 50%),
+    hsl(var(--background));
+}
