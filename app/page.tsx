@@ -400,7 +400,7 @@ export default function Home() {
           </h3>
           <p className="text-muted-foreground mb-8 text-base md:text-lg">Our AI chatbot is here to help you 24/7</p>
           <a
-            href="https://ai-chatbot-one-ochre.vercel.app/"
+            href="https://prospera-chatbot-lemon.vercel.app"
             className="inline-block px-10 py-3 font-bold rounded-cta bg-cta text-white shadow-cta hover:bg-cta-hover hover:shadow-cta-hover transition-all duration-200"
             target="_blank"
             rel="noopener noreferrer"
